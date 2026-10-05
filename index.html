@@ -1,0 +1,489 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>أنا رمزك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a single column; the generator is the hero, set in a green slab with the logo's slanted top. */
+:root{
+  --green:#385B4F; --green-deep:#2A463C; --cream:#F1EEEB;
+  --bg:#F6F4F1; --surface:#FFFFFF; --line:#DCE3DF; --fg:#1C2925; --muted:#5D6E68;
+  --accent:#385B4F; --accent-soft:#E3ECE8; --on-accent:#F1EEEB;
+  --slab:#385B4F; --slab-fg:#F1EEEB; --slab-field:#2A463C;
+  --weak:#C2412D; --fair:#C98A12; --good:#3E8E5E; --great:#1F6E4A;
+  --font-display:"Reem Kufi","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --font-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111916; --surface:#18231F; --line:#2B3A35; --fg:#ECE8E3; --muted:#9AABA4;
+  --accent:#8CC0A9; --accent-soft:#22332D; --on-accent:#10201A;
+  --slab:#2C4A3F; --slab-fg:#F1EEEB; --slab-field:#1D332B;
+  --weak:#EF7A62; --fair:#E7B44A; --good:#6CC08D; --great:#8FD9AE; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111916; --surface:#18231F; --line:#2B3A35; --fg:#ECE8E3; --muted:#9AABA4;
+  --accent:#8CC0A9; --accent-soft:#22332D; --on-accent:#10201A;
+  --slab:#2C4A3F; --slab-fg:#F1EEEB; --slab-field:#1D332B;
+  --weak:#EF7A62; --fair:#E7B44A; --good:#6CC08D; --great:#8FD9AE; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.7;direction:rtl}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.25;margin:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--fg)}
+p{margin:0}
+button,input{font:inherit}
+:focus-visible{outline:3px solid var(--fair);outline-offset:2px;border-radius:6px}
+.eyebrow{font-size:.82rem;font-weight:600;color:var(--accent);letter-spacing:.02em}
+
+/* header */
+header.top{padding-block:18px}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.brand img{width:64px;height:auto}
+.brand b{font-family:var(--font-display);font-size:1.35rem}
+nav.links{display:flex;gap:6px;flex-wrap:wrap}
+nav.links a{color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px;font-weight:500;font-size:.95rem}
+nav.links a:hover{background:var(--accent-soft);color:var(--fg)}
+
+/* hero */
+.hero{padding-block:24px 8px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--fg)}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{margin-top:12px;color:var(--muted);font-size:1.1rem;max-width:34em}
+.hero .logo-big{justify-self:center;width:min(100%,300px)}
+.privacy{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:.9rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:999px}
+.privacy svg{flex:none}
+
+/* generator slab */
+.gen{margin-block:28px 0}
+.slab{background:var(--slab);color:var(--slab-fg);padding:clamp(56px,8vw,84px) clamp(18px,4vw,40px) clamp(22px,4vw,36px);
+  clip-path:polygon(0 clamp(28px,5vw,48px),100% 0,100% 100%,0 100%);border-radius:0 0 22px 22px}
+.slab h2{color:var(--slab-fg)}
+.slab .sub{opacity:.82;margin-top:4px}
+.out{margin-top:20px;display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.out .field{flex:1 1 320px;min-width:0;background:var(--slab-field);border-radius:14px;padding:16px 18px;display:flex;align-items:center}
+#pw{direction:ltr;text-align:left;font-family:var(--font-mono);font-weight:700;font-size:clamp(1.05rem,2.6vw,1.55rem);letter-spacing:.04em;word-break:break-all;width:100%;line-height:1.5}
+#pw .d{color:#F2C46B} #pw .s{color:#9FD7BE}
+.btn{border:0;cursor:pointer;border-radius:12px;padding:12px 18px;font-weight:600;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.btn-cream{background:var(--cream);color:#24392F}
+.btn-cream:hover{background:#fff}
+.btn-ghost{background:transparent;color:var(--slab-fg);border:1.5px solid rgba(241,238,235,.45)}
+.btn-ghost:hover{border-color:var(--slab-fg)}
+.out .acts{display:flex;gap:10px}
+
+.meter{margin-top:18px}
+.meter .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.meter .lvl{font-family:var(--font-display);font-size:1.25rem}
+.meter .stats{font-size:.9rem;opacity:.85;font-variant-numeric:tabular-nums}
+.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.bars i{height:8px;border-radius:4px;background:rgba(241,238,235,.18);transition:background .25s}
+
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:22px 32px;margin-top:26px;padding-top:24px;border-top:1px solid rgba(241,238,235,.18)}
+.ctl-label{font-weight:600;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline}
+.ctl-label output{font-family:var(--font-mono);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--slab-field);padding:5px;border-radius:12px}
+.levels button{background:transparent;color:var(--slab-fg);border:0;border-radius:9px;padding:9px 6px;cursor:pointer;font-weight:600;line-height:1.3}
+.levels button small{display:block;font-weight:400;opacity:.75;font-size:.76rem}
+.levels button[aria-pressed="true"]{background:var(--cream);color:#24392F}
+input[type=range]{width:100%;accent-color:var(--cream);direction:ltr}
+.range-ends{display:flex;justify-content:space-between;font-size:.8rem;opacity:.7;direction:ltr;font-family:var(--font-mono)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{display:flex;align-items:center;gap:10px;background:var(--slab-field);padding:10px 12px;border-radius:10px;cursor:pointer;user-select:none}
+.opt input{width:18px;height:18px;accent-color:var(--cream);flex:none}
+.opt code{font-family:var(--font-mono);opacity:.7;font-size:.8rem;margin-inline-start:auto;direction:ltr}
+.hint{font-size:.85rem;opacity:.8;margin-top:10px;min-height:1.4em}
+
+/* sections */
+section.block{padding-block:56px 8px}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:22px;max-width:40em}
+.sec-head p{color:var(--muted)}
+
+/* checker */
+.checker{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.inp{display:flex;gap:8px;align-items:center;border:1.5px solid var(--line);border-radius:12px;padding:4px 4px 4px 12px;background:var(--bg)}
+.inp:focus-within{border-color:var(--accent)}
+.inp input{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);padding:10px 4px;outline:none;direction:ltr;text-align:left;font-family:var(--font-mono);font-size:1.05rem}
+.inp button{background:var(--accent-soft);color:var(--fg);border:0;border-radius:9px;padding:8px 12px;cursor:pointer;font-weight:600;font-size:.88rem}
+.c-meter{margin-top:16px}
+.c-meter .bars i{background:var(--line)}
+.c-meter .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.c-meter .lvl{font-family:var(--font-display);font-size:1.2rem}
+.c-meter .stats{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.checks .mark{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px;background:var(--line);color:var(--muted)}
+.checks li.ok .mark{background:var(--good);color:var(--surface)}
+.checks li.bad .mark{background:var(--weak);color:var(--surface)}
+.advice h3{font-size:1.15rem;margin-bottom:10px}
+.advice ul{margin:0;padding-inline-start:20px;display:grid;gap:6px;color:var(--fg)}
+.advice .empty{color:var(--muted)}
+.better{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line)}
+.better .bp{direction:ltr;text-align:left;font-family:var(--font-mono);font-weight:700;background:var(--accent-soft);padding:10px 12px;border-radius:10px;word-break:break-all;margin-top:6px}
+.better .btn{margin-top:10px;background:var(--accent);color:var(--on-accent)}
+
+/* tips */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tip{border-top:3px solid var(--accent);padding-top:14px}
+.tip h3{font-size:1.1rem;margin-bottom:6px}
+.tip p{color:var(--muted);font-size:.95rem}
+.scale{margin-top:28px;overflow-x:auto}
+.scale table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+.scale th,.scale td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line)}
+.scale th{color:var(--muted);font-weight:600;font-size:.82rem}
+.scale td.num{font-family:var(--font-mono);direction:ltr;text-align:right;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-end:8px;vertical-align:middle}
+
+/* team */
+.team{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:stretch}
+.photo{margin:0;border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
+.members{display:grid;gap:12px;align-content:center}
+.member{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.member .ini{flex:none;width:52px;height:52px;border-radius:14px;background:var(--green);color:var(--cream);display:grid;place-items:center;font-family:var(--font-display);font-size:1.4rem}
+.member b{display:block;font-size:1.05rem}
+.member span{color:var(--muted);font-size:.92rem}
+
+/* partners */
+.partners{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;padding:clamp(18px,4vw,36px);display:flex;justify-content:center}
+.partners img{width:min(100%,640px);height:auto}
+
+footer{margin-top:64px;background:var(--slab);color:var(--slab-fg);padding-block:30px;clip-path:polygon(0 24px,100% 0,100% 100%,0 100%)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:14px}
+footer img{width:72px}
+footer p{opacity:.85;font-size:.92rem}
+
+.toast{position:fixed;inset-inline:0;bottom:calc(20px + env(safe-area-inset-bottom,0px));margin-inline:auto;width:max-content;max-width:calc(100% - 32px);background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:600;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}
+.toast.show{opacity:1;transform:none}
+
+@media (max-width:820px){
+  .hero .wrap,.checker,.team,.controls{grid-template-columns:1fr}
+  .hero .logo-big{display:none}
+  .tips{grid-template-columns:1fr}
+}
+@media (max-width:440px){
+  .opts{grid-template-columns:1fr}
+  .out .acts{width:100%}.out .acts .btn{flex:1}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#gen"><img src="assets/logo.png" alt="شعار أنا رمزك"><b>أنا رمزك</b></a>
+    <nav class="links" aria-label="أقسام الموقع">
+      <a href="#gen">المولّد</a><a href="#check">افحص رمزك</a><a href="#tips">نصائح</a><a href="#team">الفريق</a><a href="#partners">الشركاء</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">مشروع توعوي في الأمن السيبراني</p>
+      <h1>رمزك القوي <span>يحميك</span> قبل أن تحتاج الحماية</h1>
+      <p class="lead">ولّد رموزًا عشوائية قوية، وتحكّم في طولها ومستوى حمايتها، واعرف فورًا هل رمزك ضعيف أم آمن، وكم يحتاج المخترق ليكسره.</p>
+      <span class="privacy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>كل شيء يحدث داخل جهازك، ولا يُرسل أي رمز إلى أي مكان</span>
+    </div>
+    <img class="logo-big" src="assets/logo.png" alt="">
+  </div>
+</section>
+
+<div class="wrap gen" id="gen">
+  <div class="slab">
+    <h2>مولّد الرموز</h2>
+    <p class="sub">اختر مستوى الحماية أو خصّص الإعدادات بنفسك.</p>
+
+    <div class="out">
+      <div class="field"><div id="pw" aria-live="polite"></div></div>
+      <div class="acts">
+        <button class="btn btn-cream" id="copy" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>نسخ</button>
+        <button class="btn btn-ghost" id="regen" type="button" aria-label="توليد رمز جديد"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>جديد</button>
+      </div>
+    </div>
+
+    <div class="meter" id="g-meter">
+      <div class="row"><span class="lvl" id="g-lvl">—</span><span class="stats" id="g-stats"></span></div>
+      <div class="bars"><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="controls">
+      <div>
+        <div class="ctl-label">مستوى الحماية</div>
+        <div class="levels" role="group" aria-label="مستوى الحماية">
+          <button type="button" data-level="basic" aria-pressed="false">أساسي<small>12 حرفًا</small></button>
+          <button type="button" data-level="strong" aria-pressed="true">قوي<small>16 حرفًا</small></button>
+          <button type="button" data-level="max" aria-pressed="false">فائق<small>24 حرفًا</small></button>
+        </div>
+        <div class="ctl-label" style="margin-top:20px"><label for="len">طول الرمز</label><output id="len-out" for="len">16</output></div>
+        <input type="range" id="len" min="6" max="64" value="16">
+        <div class="range-ends"><span>6</span><span>64</span></div>
+      </div>
+      <div>
+        <div class="ctl-label">مكونات الرمز</div>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" id="o-up" checked>حروف كبيرة<code>A–Z</code></label>
+          <label class="opt"><input type="checkbox" id="o-low" checked>حروف صغيرة<code>a–z</code></label>
+          <label class="opt"><input type="checkbox" id="o-num" checked>أرقام<code>0–9</code></label>
+          <label class="opt"><input type="checkbox" id="o-sym" checked>رموز خاصة<code>!@#$%</code></label>
+          <label class="opt"><input type="checkbox" id="o-amb">استبعاد المتشابهة<code>O0 l1I</code></label>
+          <label class="opt"><input type="checkbox" id="o-rep" checked>بدون تكرار متتالٍ<code>aa 11</code></label>
+        </div>
+        <p class="hint" id="hint"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="block" id="check">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">افحص رمزك</p>
+      <h2>هل رمزك الحالي آمن؟</h2>
+      <p>اكتب رمزًا لتعرف قوته وما ينقصه. الفحص يتم في متصفحك فقط، ولا يُحفظ ولا يُرسل.</p>
+    </div>
+    <div class="checker">
+      <div class="panel">
+        <label for="test" class="eyebrow" style="display:block;margin-bottom:8px">الرمز المراد فحصه</label>
+        <div class="inp">
+          <input id="test" type="password" autocomplete="off" spellcheck="false" value="Riyadh2024!">
+          <button type="button" id="toggle">إظهار</button>
+        </div>
+        <div class="c-meter">
+          <div class="row"><span class="lvl" id="c-lvl">—</span><span class="stats" id="c-stats"></span></div>
+          <div class="bars" id="c-bars"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <ul class="checks" id="checks"></ul>
+      </div>
+      <div class="panel advice">
+        <h3>كيف تحسّنه؟</h3>
+        <ul id="advice"></ul>
+        <div class="better">
+          <p class="eyebrow">نسخة أقوى مقترحة</p>
+          <div class="bp" id="better"></div>
+          <button class="btn" type="button" id="use-better">نسخ المقترح</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="tips">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">نصائح الحماية</p>
+      <h2>عادات بسيطة تحمي حساباتك</h2>
+    </div>
+    <div class="tips">
+      <div class="tip"><h3>رمز مختلف لكل حساب</h3><p>إذا تسرّب رمز موقع واحد، يجرّبه المخترق على بريدك وبنكك. اجعل لكل حساب رمزه الخاص.</p></div>
+      <div class="tip"><h3>الطول أهم من التعقيد</h3><p>كل حرف إضافي يضاعف وقت الكسر عشرات المرات. 16 حرفًا عشوائيًا أقوى بكثير من 8 أحرف معقدة.</p></div>
+      <div class="tip"><h3>فعّل التحقق الثنائي</h3><p>رمز التحقق على جوالك يمنع الدخول حتى لو عرف أحدهم رمزك. ولا تشارك رمز التحقق مع أي شخص.</p></div>
+      <div class="tip"><h3>ابتعد عن المعلومات الشخصية</h3><p>اسمك، تاريخ ميلادك، رقم جوالك، واسم مدينتك أول ما يجرّبه المخترق.</p></div>
+      <div class="tip"><h3>استخدم مدير كلمات المرور</h3><p>لا تحتاج حفظ كل الرموز. مدير كلمات المرور يحفظها مشفّرة ويملؤها لك.</p></div>
+      <div class="tip"><h3>احذر روابط التصيّد</h3><p>البنك لن يطلب رمزك عبر رسالة أو اتصال. اكتب عنوان الموقع بنفسك بدل الضغط على الروابط.</p></div>
+    </div>
+    <div class="scale">
+      <table>
+        <thead><tr><th>المستوى</th><th>قوة الرمز (بت)</th><th>مثال</th><th>زمن الكسر التقريبي</th></tr></thead>
+        <tbody>
+          <tr><td><span class="dot" style="background:var(--weak)"></span>ضعيف</td><td class="num">&lt; 40</td><td class="num">sara123</td><td>ثوانٍ إلى دقائق</td></tr>
+          <tr><td><span class="dot" style="background:var(--fair)"></span>متوسط</td><td class="num">40 – 59</td><td class="num">Sara#2024</td><td>ساعات إلى أشهر</td></tr>
+          <tr><td><span class="dot" style="background:var(--good)"></span>قوي</td><td class="num">60 – 79</td><td class="num">k7#Qm2!vRx9p</td><td>آلاف السنين</td></tr>
+          <tr><td><span class="dot" style="background:var(--great)"></span>آمن جدًا</td><td class="num">≥ 80</td><td class="num">tP4$wZ9!mQ2#rK7e</td><td>أطول من عمر الكون</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:8px">الحساب مبني على مهاجم يجرّب 10 مليارات رمز في الثانية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">فريق العمل</p>
+      <h2>من صنع «أنا رمزك»</h2>
+    </div>
+    <div class="team">
+      <figure class="photo"><img src="assets/team.jpg" alt="فريق أنا رمزك في برنامج مبدعون للأمن السيبراني" loading="lazy"></figure>
+      <div class="members">
+        <div class="member"><div class="ini">ع</div><div><b>عبير تركي أبو الفرج</b><span>مديرة المشروع</span></div></div>
+        <div class="member"><div class="ini">ت</div><div><b>ترف رضيان المطيري</b><span>مديرة التسويق</span></div></div>
+        <div class="member"><div class="ini">س</div><div><b>سعاد عمرو نجدي</b><span>مديرة التقنية</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="partners">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">شركاء النجاح</p>
+      <h2>شكرًا لمن آمن بفكرتنا</h2>
+      <p>بنك الجزيرة، وبرنامج مبدعون، وتك شوب.</p>
+    </div>
+    <div class="partners"><img src="assets/partners.png" alt="شعارات شركاء النجاح: مبدعون، تك شوب، بنك الجزيرة"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="أنا رمزك">
+    <p>أنا رمزك · مشروع ضمن برنامج مبدعون للأمن السيبراني</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const SETS={up:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",low:"abcdefghijklmnopqrstuvwxyz",num:"0123456789",sym:"!@#$%^&*-_=+?~.:;"};
+const AMB=/[O0oIl1|]/g;
+const LEVELS={basic:{len:12,up:1,low:1,num:1,sym:0},strong:{len:16,up:1,low:1,num:1,sym:1},max:{len:24,up:1,low:1,num:1,sym:1}};
+const NAMES=["ضعيف","متوسط","قوي","آمن جدًا"];
+const COLORS=["var(--weak)","var(--fair)","var(--good)","var(--great)"];
+
+function rand(n){ // unbiased integer in [0,n)
+  const max=Math.floor(0x100000000/n)*n, a=new Uint32Array(1);
+  do{crypto.getRandomValues(a)}while(a[0]>=max);
+  return a[0]%n;
+}
+function pools(){
+  const amb=$("o-amb").checked, out=[];
+  for(const k of ["up","low","num","sym"]) if($("o-"+k).checked){let s=SETS[k]; if(amb)s=s.replace(AMB,""); out.push(s)}
+  return out;
+}
+function generate(len,ps,noRep){
+  const all=ps.join(""); let arr;
+  for(let t=0;t<50;t++){
+    arr=ps.map(p=>p[rand(p.length)]); // at least one from each set
+    while(arr.length<len) arr.push(all[rand(all.length)]);
+    for(let i=arr.length-1;i>0;i--){const j=rand(i+1);[arr[i],arr[j]]=[arr[j],arr[i]]}
+    if(!noRep||!/(.)\1/.test(arr.join(""))) break;
+  }
+  return arr.join("");
+}
+function level(bits){return bits<40?0:bits<60?1:bits<80?2:3}
+function crackTime(bits){
+  const s=Math.pow(2,bits)/2/1e10;
+  if(s<1) return "أقل من ثانية";
+  const u=[[31536e5*1e3,"ألف قرن"],[31536e5,"قرن"],[31536e3,"سنة"],[2592e3,"شهر"],[86400,"يوم"],[3600,"ساعة"],[60,"دقيقة"],[1,"ثانية"]];
+  if(s>31536e3*1e9) return "أطول من عمر الكون";
+  for(const [v,n] of u) if(s>=v){const x=s/v; return (x>=1000?Math.round(x).toLocaleString("ar-SA"):x>=10?Math.round(x).toLocaleString("ar-SA"):x.toFixed(1).replace(/\.0$/,"").replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]))+" "+n}
+}
+function paint(bars,lvl){bars.forEach((b,i)=>b.style.background=i<=lvl?COLORS[lvl]:"")}
+function colorize(s){return [...s].map(c=>{const e=c==="&"?"&amp;":c==="<"?"&lt;":c===">"?"&gt;":c;return /\d/.test(c)?'<span class="d">'+e+'</span>':/[A-Za-z]/.test(c)?e:'<span class="s">'+e+'</span>'}).join("")}
+
+let current="";
+function run(){
+  const len=+$("len").value; $("len-out").textContent=len;
+  const ps=pools();
+  if(!ps.length){$("hint").textContent="اختر مكونًا واحدًا على الأقل.";return}
+  const len2=Math.max(len,ps.length);
+  current=generate(len2,ps,$("o-rep").checked);
+  $("pw").innerHTML=colorize(current);
+  const pool=ps.join("").length, bits=len2*Math.log2(pool), l=level(bits);
+  $("g-lvl").textContent=NAMES[l];
+  $("g-stats").textContent=Math.round(bits)+" بت · زمن الكسر: "+crackTime(bits);
+  paint([...document.querySelectorAll("#g-meter .bars i")],l);
+  $("hint").textContent= l<2 ? "ارفع الطول أو أضف رموزًا خاصة لتصل إلى مستوى قوي." : len2<16 ? "جيد. 16 حرفًا أو أكثر يمنحك هامش أمان أكبر." : "ممتاز، هذا الرمز مناسب لحساباتك المهمة.";
+  syncLevel();
+}
+function syncLevel(){
+  const len=+$("len").value;
+  document.querySelectorAll(".levels button").forEach(b=>{
+    const L=LEVELS[b.dataset.level];
+    const m=L.len===len&&["up","low","num","sym"].every(k=>!!L[k]===$("o-"+k).checked);
+    b.setAttribute("aria-pressed",m?"true":"false");
+  });
+}
+document.querySelectorAll(".levels button").forEach(b=>b.addEventListener("click",()=>{
+  const L=LEVELS[b.dataset.level]; $("len").value=L.len;
+  for(const k of ["up","low","num","sym"]) $("o-"+k).checked=!!L[k];
+  run();
+}));
+$("len").addEventListener("input",run);
+["o-up","o-low","o-num","o-sym","o-amb","o-rep"].forEach(id=>$(id).addEventListener("change",run));
+$("regen").addEventListener("click",run);
+
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("show"),1800)}
+function copy(text,el){
+  const done=()=>toast("تم النسخ");
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,()=>fallback(el))}else fallback(el);
+  function fallback(node){try{const r=document.createRange();r.selectNodeContents(node);const s=getSelection();s.removeAllRanges();s.addRange(r);toast("الرمز محدد، اضغط Ctrl+C للنسخ")}catch(e){}}
+}
+$("copy").addEventListener("click",()=>copy(current,$("pw")));
+
+/* checker */
+const COMMON=["123456","password","123456789","12345678","12345","qwerty","abc123","111111","123123","1234567","password1","1234567890","000000","iloveyou","admin","welcome","qwerty123","1q2w3e4r","aa123456","654321","112233","123321","pass","asdfgh","zxcvbn","qwertyuiop","football","monkey","dragon","letmein","sunshine","princess","master","login","admin123","riyadh","jeddah","saudi","ksa","mohammed","ahmed","password123","p@ssw0rd","welcome1"];
+const SEQS=["abcdefghijklmnopqrstuvwxyz","0123456789","qwertyuiop","asdfghjkl","zxcvbnm"];
+function hasSeq(p){const s=p.toLowerCase();for(const q of SEQS)for(let i=0;i+4<=q.length;i++){const sub=q.substr(i,4);if(s.includes(sub)||s.includes([...sub].reverse().join("")))return true}return false}
+function analyze(p){
+  const has={up:/[A-Z]/.test(p),low:/[a-z]/.test(p),num:/\d/.test(p),sym:/[^A-Za-z0-9]/.test(p)};
+  let pool=(has.up?26:0)+(has.low?26:0)+(has.num?10:0)+(has.sym?33:0); if(/[^\x00-\x7F]/.test(p))pool+=36;
+  let bits=p.length*Math.log2(Math.max(pool,1));
+  const lower=p.toLowerCase(), base=lower.replace(/[\d!@#$%^&*._\-]+$/,"").replace(/^[\d]+/,"");
+  const common=COMMON.some(c=>lower===c||base===c||lower.includes(c)&&c.length>=5);
+  const rep=/(.)\1\1/.test(p), seq=hasSeq(p), year=/(19|20)\d\d/.test(p);
+  const tailPattern=/^[A-Z]?[a-z]+\d+[^A-Za-z0-9]?$/.test(p);
+  if(common)bits=Math.min(bits,18); if(rep)bits*=.8; if(seq)bits*=.8; if(year)bits-=6; if(tailPattern)bits*=.75;
+  bits=Math.max(0,bits);
+  return {has,bits,common,rep,seq,year,tailPattern,len:p.length};
+}
+function strengthen(p){
+  if(!p) return generate(16,pools().length?pools():[SETS.up,SETS.low,SETS.num,SETS.sym],true);
+  // keep a memorable core, then add random length and missing classes
+  let core=p.replace(/(19|20)\d\d/g,"").replace(/(.)\1+/g,"$1").slice(0,8)||"x";
+  const swap={a:"@",s:"$",o:"0",i:"!",e:"3"}; let changed=0;
+  core=[...core].map(c=>{const r=swap[c.toLowerCase()];if(r&&changed<2&&rand(2)){changed++;return r}return rand(3)===0?c.toUpperCase():c}).join("");
+  const sets=[SETS.up,SETS.low,SETS.num,SETS.sym];
+  let extra=sets.map(s=>s[rand(s.length)]).join("");
+  while(core.length+extra.length<16){const all=sets.join("");extra+=all[rand(all.length)]}
+  const cut=rand(extra.length+1);
+  return extra.slice(0,cut)+core+extra.slice(cut);
+}
+let better="";
+function check(){
+  const p=$("test").value, a=analyze(p), l=p?level(a.bits):-1;
+  $("c-lvl").textContent=p?NAMES[l]:"اكتب رمزًا للفحص";
+  $("c-lvl").style.color=p?COLORS[l]:"";
+  $("c-stats").textContent=p?Math.round(a.bits)+" بت · زمن الكسر: "+crackTime(a.bits):"";
+  paint([...document.querySelectorAll("#c-bars i")],l);
+  const items=[
+    [a.len>=12,"الطول 12 حرفًا أو أكثر ("+a.len+")"],
+    [a.has.up,"يحتوي حروفًا كبيرة A–Z"],
+    [a.has.low,"يحتوي حروفًا صغيرة a–z"],
+    [a.has.num,"يحتوي أرقامًا"],
+    [a.has.sym,"يحتوي رموزًا خاصة"],
+    [!a.common,"ليس من الرموز الشائعة"],
+    [!a.seq&&!a.rep,"بدون تسلسل أو تكرار (abcd، 1234، aaa)"],
+    [!a.year,"لا يحتوي سنة أو تاريخًا"]
+  ];
+  $("checks").innerHTML=items.map(([ok,t])=>`<li class="${p?(ok?"ok":"bad"):""}"><span class="mark">${p?(ok?"✓":"✕"):"·"}</span>${t}</li>`).join("");
+  const adv=[];
+  if(!p) adv.push("اكتب الرمز في الخانة لتظهر لك الاقتراحات.");
+  else{
+    if(a.common) adv.push("هذا الرمز موجود في قوائم الرموز المسرّبة، غيّره فورًا.");
+    if(a.len<12) adv.push("زد الطول إلى 12 حرفًا على الأقل، ويفضّل 16.");
+    if(!a.has.sym) adv.push("أضف رمزًا خاصًا مثل ! أو # في منتصف الرمز وليس آخره.");
+    if(!a.has.up||!a.has.low) adv.push("امزج الحروف الكبيرة والصغيرة.");
+    if(!a.has.num) adv.push("أضف أرقامًا غير مرتبطة بك.");
+    if(a.year) adv.push("احذف السنة أو التاريخ، فهي أول ما يُخمَّن.");
+    if(a.seq||a.rep) adv.push("تجنّب التسلسلات مثل 1234 وqwer والأحرف المكررة.");
+    if(a.tailPattern) adv.push("نمط «كلمة + أرقام + رمز» متوقّع جدًا. وزّع الأرقام والرموز داخل الرمز.");
+    if(!adv.length) adv.push(l>=2?"رمزك جيد. تأكد فقط أنك لا تستخدمه في أكثر من حساب.":"زد الطول ليصبح أقوى.");
+  }
+  $("advice").innerHTML=adv.map(t=>`<li${!p?' class="empty"':""}>${t}</li>`).join("");
+  better=strengthen(p); $("better").textContent=better;
+}
+$("test").addEventListener("input",check);
+$("toggle").addEventListener("click",()=>{const i=$("test"),s=i.type==="password";i.type=s?"text":"password";$("toggle").textContent=s?"إخفاء":"إظهار"});
+$("use-better").addEventListener("click",()=>copy(better,$("better")));
+
+run(); check();
+})();
+</script>
+
+</body></html>
