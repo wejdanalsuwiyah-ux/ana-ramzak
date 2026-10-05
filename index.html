@@ -1,4 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="أنا رمزك: مولّد رموز قوية وفاحص لقوة كلمات المرور وخزنة مشفّرة.">
+<link rel="icon" href="logo.png">
 <title>أنا رمزك</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +33,9 @@
   --weak:#EF7A62; --fair:#E7B44A; --good:#6CC08D; --great:#8FD9AE; color-scheme:dark}
 
 *{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.7;direction:rtl}
 .wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
 h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.25;margin:0}
@@ -155,6 +164,44 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 footer img{width:72px}
 footer p{opacity:.85;font-size:.92rem}
 
+/* social icons */
+.social{display:flex;gap:8px;flex-wrap:wrap}
+.ico{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--fg);border:1px solid var(--line);background:var(--surface);padding:6px 12px;border-radius:999px;font-size:.88rem;font-weight:600}
+.ico:hover{border-color:var(--accent);color:var(--accent)}
+footer .ico{background:transparent;color:var(--slab-fg);border-color:rgba(241,238,235,.4)}
+footer .ico:hover{color:var(--slab-fg);border-color:var(--slab-fg)}
+.btn-line{background:transparent;color:var(--slab-fg);border:1.5px dashed rgba(241,238,235,.45);font-size:.9rem;padding:8px 14px}
+.btn-line:hover{border-style:solid}
+
+/* vault */
+.vault{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}
+.vform{display:grid;gap:12px}
+.vform label{font-size:.88rem;font-weight:600;color:var(--muted);display:grid;gap:6px}
+.vform input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg);color:var(--fg);outline:none}
+.vform input:focus{border-color:var(--accent)}
+.vform input.ltr{direction:ltr;text-align:left;font-family:var(--font-mono)}
+.vrow{display:flex;gap:8px;flex-wrap:wrap}
+.vbtn{border:0;cursor:pointer;border-radius:10px;padding:10px 16px;font-weight:600;background:var(--accent);color:var(--on-accent)}
+.vbtn.alt{background:var(--accent-soft);color:var(--fg)}
+.vbtn.danger{background:transparent;color:var(--weak);border:1.5px solid var(--weak)}
+.vbtn.sm{padding:6px 10px;font-size:.82rem;border-radius:8px}
+.vmsg{font-size:.88rem;min-height:1.3em}
+.vmsg.err{color:var(--weak)} .vmsg.ok{color:var(--good)}
+.vnote{font-size:.85rem;color:var(--muted);background:var(--accent-soft);border-radius:12px;padding:12px 14px}
+.vhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.vhead h3{font-size:1.15rem}
+.vsearch{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--bg);color:var(--fg);margin-bottom:12px;outline:none}
+.vlist{display:grid;gap:10px}
+.ventry{border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:6px;background:var(--bg)}
+.ventry .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.ventry b{font-size:1rem;min-width:0;word-break:break-word}
+.ventry .user{color:var(--muted);font-size:.88rem;direction:ltr;text-align:right;word-break:break-all}
+.ventry .pwrow{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ventry .pwv{flex:1 1 160px;min-width:0;direction:ltr;text-align:left;font-family:var(--font-mono);font-weight:700;word-break:break-all}
+.vempty{color:var(--muted);text-align:center;padding:24px 8px;border:1.5px dashed var(--line);border-radius:14px}
+.locked-ic{width:48px;height:48px;border-radius:14px;background:var(--green);color:var(--cream);display:grid;place-items:center;margin-bottom:6px}
+@media (max-width:820px){.vault{grid-template-columns:1fr}}
+
 .toast{position:fixed;inset-inline:0;bottom:calc(20px + env(safe-area-inset-bottom,0px));margin-inline:auto;width:max-content;max-width:calc(100% - 32px);background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:600;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}
 .toast.show{opacity:1;transform:none}
 
@@ -169,13 +216,18 @@ footer p{opacity:.85;font-size:.92rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-
+</head>
+<body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#gen"><img src="assets/logo.png" alt="شعار أنا رمزك"><b>أنا رمزك</b></a>
+    <a class="brand" href="#gen"><img src="logo.png" alt="شعار أنا رمزك"><b>أنا رمزك</b></a>
     <nav class="links" aria-label="أقسام الموقع">
-      <a href="#gen">المولّد</a><a href="#check">افحص رمزك</a><a href="#tips">نصائح</a><a href="#team">الفريق</a><a href="#partners">الشركاء</a>
+      <a href="#gen">المولّد</a><a href="#check">افحص رمزك</a><a href="#vault">خزنتي</a><a href="#tips">نصائح</a><a href="#team">الفريق</a><a href="#partners">الشركاء</a>
     </nav>
+    <div class="social">
+      <a class="ico" href="https://drive.google.com/file/d/1efixpaeC8M9yRRC2QHFeBuZ1sGstKMir/view?usp=sharing" target="_blank" rel="noopener" title="ملف المشروع" aria-label="ملف المشروع"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg><span>ملف المشروع</span></a>
+      <a class="ico" href="https://www.instagram.com/ats_password/" target="_blank" rel="noopener" title="انستقرام ats_password" aria-label="حسابنا في انستقرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>ats_password</span></a>
+    </div>
   </div>
 </header>
 
@@ -187,7 +239,7 @@ footer p{opacity:.85;font-size:.92rem}
       <p class="lead">ولّد رموزًا عشوائية قوية، وتحكّم في طولها ومستوى حمايتها، واعرف فورًا هل رمزك ضعيف أم آمن، وكم يحتاج المخترق ليكسره.</p>
       <span class="privacy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>كل شيء يحدث داخل جهازك، ولا يُرسل أي رمز إلى أي مكان</span>
     </div>
-    <img class="logo-big" src="assets/logo.png" alt="">
+    <img class="logo-big" src="logo.png" alt="">
   </div>
 </section>
 
@@ -203,6 +255,7 @@ footer p{opacity:.85;font-size:.92rem}
         <button class="btn btn-ghost" id="regen" type="button" aria-label="توليد رمز جديد"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>جديد</button>
       </div>
     </div>
+    <div style="margin-top:10px"><button class="btn btn-line" id="to-vault" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>احفظ هذا الرمز في خزنتي</button></div>
 
     <div class="meter" id="g-meter">
       <div class="row"><span class="lvl" id="g-lvl">—</span><span class="stats" id="g-stats"></span></div>
@@ -270,6 +323,87 @@ footer p{opacity:.85;font-size:.92rem}
   </div>
 </section>
 
+<section class="block" id="vault">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">خزنتي</p>
+      <h2>احفظ رموزك ولا تنساها</h2>
+      <p>خزنة مشفّرة داخل متصفحك تحميها كلمة مرور رئيسية واحدة. تحفظ فيها رموز حساباتك وترجع لها متى ما احتجت.</p>
+    </div>
+
+    <!-- create -->
+    <div class="vault" id="v-create" hidden>
+      <div class="panel">
+        <div class="locked-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:10px">أنشئ خزنتك</h3>
+        <form class="vform" id="f-create" autocomplete="off">
+          <label>كلمة المرور الرئيسية<input id="c-m1" type="password" class="ltr" minlength="8" required></label>
+          <label>أعد كتابتها للتأكيد<input id="c-m2" type="password" class="ltr" minlength="8" required></label>
+          <div class="vmsg" id="c-msg"></div>
+          <div class="vrow"><button class="vbtn" type="submit">إنشاء الخزنة</button><button class="vbtn alt" type="button" id="c-import">استيراد نسخة احتياطية</button></div>
+        </form>
+      </div>
+      <div class="vnote">
+        <b>قبل ما تبدأ:</b>
+        <ul style="margin:8px 0 0;padding-inline-start:18px;display:grid;gap:4px">
+          <li>الخزنة مشفّرة بمعيار AES-256 ومحفوظة في هذا المتصفح وهذا الجهاز فقط.</li>
+          <li>لا نستطيع نحن ولا أي أحد استرجاع كلمة المرور الرئيسية. إذا نسيتها تضيع الخزنة.</li>
+          <li>اختر كلمة رئيسية طويلة تتذكرها، مثل جملة من أربع كلمات.</li>
+          <li>صدّر نسخة احتياطية بين فترة وأخرى لتنقلها لجهاز آخر أو تحميها من مسح بيانات المتصفح.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- unlock -->
+    <div class="vault" id="v-locked" hidden>
+      <div class="panel">
+        <div class="locked-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:10px">الخزنة مقفلة</h3>
+        <form class="vform" id="f-unlock" autocomplete="off">
+          <label>كلمة المرور الرئيسية<input id="u-m" type="password" class="ltr" required></label>
+          <div class="vmsg" id="u-msg"></div>
+          <div class="vrow"><button class="vbtn" type="submit">فتح الخزنة</button></div>
+        </form>
+      </div>
+      <div class="vnote">
+        <p>نسيت كلمة المرور الرئيسية؟ لا يمكن فتح الخزنة بدونها. تقدر تمسحها وتبدأ من جديد، وستضيع الرموز المحفوظة فيها.</p>
+        <div class="vrow" style="margin-top:10px"><button class="vbtn danger sm" type="button" id="u-reset">مسح الخزنة والبدء من جديد</button></div>
+      </div>
+    </div>
+
+    <!-- open -->
+    <div class="vault" id="v-open" hidden>
+      <div class="panel">
+        <h3 style="font-size:1.15rem;margin-bottom:10px" id="a-title">إضافة رمز</h3>
+        <form class="vform" id="f-add" autocomplete="off">
+          <label>الموقع أو التطبيق<input id="a-site" required placeholder="مثال: البريد، سناب، البنك"></label>
+          <label>اسم المستخدم أو البريد<input id="a-user" class="ltr" placeholder="name@example.com"></label>
+          <label>الرمز<input id="a-pw" class="ltr" required></label>
+          <div class="vrow"><button class="vbtn alt sm" type="button" id="a-gen">ولّد رمزًا قويًا</button><span class="vmsg" id="a-str"></span></div>
+          <label>ملاحظة (اختياري)<input id="a-note"></label>
+          <div class="vmsg" id="a-msg"></div>
+          <div class="vrow"><button class="vbtn" type="submit" id="a-save">حفظ في الخزنة</button><button class="vbtn alt" type="button" id="a-cancel" hidden>إلغاء التعديل</button></div>
+        </form>
+      </div>
+      <div class="panel">
+        <div class="vhead">
+          <h3>رموزي <span id="v-count" style="color:var(--muted);font-size:.9rem"></span></h3>
+          <div class="vrow">
+            <button class="vbtn alt sm" type="button" id="v-export">تصدير نسخة احتياطية</button>
+            <button class="vbtn alt sm" type="button" id="v-import">استيراد</button>
+            <button class="vbtn sm" type="button" id="v-lock">قفل الخزنة</button>
+          </div>
+        </div>
+        <input class="vsearch" id="v-search" placeholder="ابحث باسم الموقع أو المستخدم" aria-label="بحث في الخزنة">
+        <div class="vlist" id="v-list"></div>
+        <p class="vmsg" id="v-msg" style="margin-top:10px"></p>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:6px">تُقفل الخزنة تلقائيًا بعد 5 دقائق بدون استخدام.</p>
+      </div>
+    </div>
+    <input type="file" id="v-file" accept=".json,application/json" hidden>
+  </div>
+</section>
+
 <section class="block" id="tips">
   <div class="wrap">
     <div class="sec-head">
@@ -306,7 +440,7 @@ footer p{opacity:.85;font-size:.92rem}
       <h2>من صنع «أنا رمزك»</h2>
     </div>
     <div class="team">
-      <figure class="photo"><img src="assets/team.jpg" alt="فريق أنا رمزك في برنامج مبدعون للأمن السيبراني" loading="lazy"></figure>
+      <figure class="photo"><img src="team.jpg" alt="فريق أنا رمزك في برنامج مبدعون للأمن السيبراني" loading="lazy"></figure>
       <div class="members">
         <div class="member"><div class="ini">ع</div><div><b>عبير تركي أبو الفرج</b><span>مديرة المشروع</span></div></div>
         <div class="member"><div class="ini">ت</div><div><b>ترف رضيان المطيري</b><span>مديرة التسويق</span></div></div>
@@ -323,14 +457,18 @@ footer p{opacity:.85;font-size:.92rem}
       <h2>شكرًا لمن آمن بفكرتنا</h2>
       <p>بنك الجزيرة، وبرنامج مبدعون، وتك شوب.</p>
     </div>
-    <div class="partners"><img src="assets/partners.png" alt="شعارات شركاء النجاح: مبدعون، تك شوب، بنك الجزيرة"></div>
+    <div class="partners"><img src="partners.png" alt="شعارات شركاء النجاح: مبدعون، تك شوب، بنك الجزيرة"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo.png" alt="أنا رمزك">
+    <img src="logo.png" alt="أنا رمزك">
     <p>أنا رمزك · مشروع ضمن برنامج مبدعون للأمن السيبراني</p>
+    <div class="social">
+      <a class="ico" href="https://drive.google.com/file/d/1efixpaeC8M9yRRC2QHFeBuZ1sGstKMir/view?usp=sharing" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg><span>ملف المشروع</span></a>
+      <a class="ico" href="https://www.instagram.com/ats_password/" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span dir="ltr">@ats_password</span></a>
+    </div>
   </div>
 </footer>
 
@@ -482,8 +620,149 @@ $("test").addEventListener("input",check);
 $("toggle").addEventListener("click",()=>{const i=$("test"),s=i.type==="password";i.type=s?"text":"password";$("toggle").textContent=s?"إخفاء":"إظهار"});
 $("use-better").addEventListener("click",()=>copy(better,$("better")));
 
+/* ===== vault: AES-GCM 256 with a PBKDF2-derived key, stored in localStorage ===== */
+const VKEY="ana-ramzak-vault-v1", ITER=310000, IDLE=5*60*1000;
+const enc=new TextEncoder(), dec=new TextDecoder();
+const b64=u=>btoa(String.fromCharCode(...new Uint8Array(u)));
+const unb64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+let vKey=null, vSalt=null, vItems=[], vEdit=null, idleT=null, vPass=null; // vPass lives in memory only while unlocked, for merging backups
+
+function store(){try{return localStorage.getItem(VKEY)}catch(e){return null}}
+function storeSet(v){try{localStorage.setItem(VKEY,v);return true}catch(e){return false}}
+function storeDel(){try{localStorage.removeItem(VKEY)}catch(e){}}
+async function deriveKey(pass,salt){
+  const base=await crypto.subtle.importKey("raw",enc.encode(pass),"PBKDF2",false,["deriveKey"]);
+  return crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:ITER,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
+}
+async function sealed(){
+  const iv=crypto.getRandomValues(new Uint8Array(12));
+  const ct=await crypto.subtle.encrypt({name:"AES-GCM",iv},vKey,enc.encode(JSON.stringify(vItems)));
+  return JSON.stringify({app:"ana-ramzak",v:1,iter:ITER,salt:b64(vSalt),iv:b64(iv),ct:b64(ct)});
+}
+async function persist(){ if(!storeSet(await sealed())) vmsg("v-msg","المتصفح يمنع الحفظ هنا. صدّر نسخة احتياطية حتى لا تضيع رموزك.","err") }
+async function openBlob(json,pass){
+  const o=JSON.parse(json); const salt=unb64(o.salt);
+  const key=await deriveKey(pass,salt);
+  const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:unb64(o.iv)},key,unb64(o.ct));
+  return {key,salt,items:JSON.parse(dec.decode(pt))};
+}
+function vmsg(id,t,cls){const e=$(id);e.textContent=t||"";e.className="vmsg"+(cls?" "+cls:"")}
+function view(){
+  $("v-create").hidden=!!store()||!!vKey;
+  $("v-locked").hidden=!store()||!!vKey;
+  $("v-open").hidden=!vKey;
+  if(vKey) renderList();
+}
+function lock(){vKey=null;vPass=null;vItems=[];vEdit=null;clearTimeout(idleT);["u-m","c-m1","c-m2"].forEach(i=>$(i).value="");resetForm();view()}
+function bump(){ if(!vKey)return; clearTimeout(idleT); idleT=setTimeout(()=>{lock();toast("تم قفل الخزنة تلقائيًا")},IDLE) }
+["click","keydown","input"].forEach(ev=>document.addEventListener(ev,bump,{passive:true}));
+
+$("f-create").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const a=$("c-m1").value,b=$("c-m2").value;
+  if(a.length<8) return vmsg("c-msg","كلمة المرور الرئيسية لازم تكون 8 أحرف على الأقل.","err");
+  if(a!==b) return vmsg("c-msg","الكلمتان غير متطابقتين.","err");
+  if(level(analyze(a).bits)<1) return vmsg("c-msg","كلمة المرور الرئيسية ضعيفة. أطلها أو اجعلها جملة من عدة كلمات.","err");
+  vmsg("c-msg","جاري إنشاء الخزنة...");
+  vSalt=crypto.getRandomValues(new Uint8Array(16)); vKey=await deriveKey(a,vSalt); vItems=[]; vPass=a;
+  await persist(); vmsg("c-msg",""); bump(); view(); toast("تم إنشاء الخزنة");
+});
+$("f-unlock").addEventListener("submit",async e=>{
+  e.preventDefault(); vmsg("u-msg","جاري الفتح...");
+  try{const r=await openBlob(store(),$("u-m").value); vKey=r.key;vSalt=r.salt;vItems=r.items;vPass=$("u-m").value; $("u-m").value=""; vmsg("u-msg",""); bump(); view()}
+  catch(err){vmsg("u-msg","كلمة المرور الرئيسية غير صحيحة.","err")}
+});
+let resetArmed=0;
+$("u-reset").addEventListener("click",()=>{
+  if(Date.now()-resetArmed<4000){storeDel();resetArmed=0;$("u-reset").textContent="مسح الخزنة والبدء من جديد";lock();toast("تم مسح الخزنة");return}
+  resetArmed=Date.now();$("u-reset").textContent="اضغط مرة ثانية للتأكيد";
+  setTimeout(()=>{$("u-reset").textContent="مسح الخزنة والبدء من جديد"},4000);
+});
+$("v-lock").addEventListener("click",()=>{lock();toast("تم قفل الخزنة")});
+
+function strHint(){const p=$("a-pw").value;if(!p)return vmsg("a-str","");const l=level(analyze(p).bits);$("a-str").textContent="القوة: "+NAMES[l];$("a-str").style.color=COLORS[l]}
+$("a-pw").addEventListener("input",strHint);
+$("a-gen").addEventListener("click",()=>{const ps=pools();$("a-pw").value=generate(16,ps.length?ps:[SETS.up,SETS.low,SETS.num,SETS.sym],true);strHint()});
+function resetForm(){vEdit=null;$("f-add").reset();$("a-title").textContent="إضافة رمز";$("a-save").textContent="حفظ في الخزنة";$("a-cancel").hidden=true;vmsg("a-str","");vmsg("a-msg","")}
+$("a-cancel").addEventListener("click",resetForm);
+$("f-add").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const it={site:$("a-site").value.trim(),user:$("a-user").value.trim(),pw:$("a-pw").value,note:$("a-note").value.trim(),t:Date.now()};
+  if(!it.site||!it.pw) return vmsg("a-msg","اكتب اسم الموقع والرمز.","err");
+  if(vEdit){const i=vItems.findIndex(x=>x.id===vEdit); if(i>-1) vItems[i]={...vItems[i],...it}}
+  else{it.id=b64(crypto.getRandomValues(new Uint8Array(9)));vItems.unshift(it)}
+  const wasEdit=!!vEdit; await persist(); resetForm(); renderList(); toast(wasEdit?"تم تحديث الرمز":"تم الحفظ في الخزنة");
+});
+$("v-search").addEventListener("input",renderList);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderList(){
+  const q=$("v-search").value.trim().toLowerCase();
+  const list=vItems.filter(x=>!q||(x.site+" "+x.user+" "+x.note).toLowerCase().includes(q));
+  $("v-count").textContent="("+vItems.length+")";
+  if(!vItems.length){$("v-list").innerHTML='<div class="vempty">خزنتك فاضية. أضف أول رمز من النموذج، أو احفظ رمزًا من المولّد.</div>';return}
+  if(!list.length){$("v-list").innerHTML='<div class="vempty">لا توجد نتائج.</div>';return}
+  $("v-list").innerHTML=list.map(x=>{const l=level(analyze(x.pw).bits);return `<div class="ventry" data-id="${esc(x.id)}">
+    <div class="top"><b>${esc(x.site)}</b><span style="font-size:.8rem;color:${COLORS[l]};font-weight:600">${NAMES[l]}</span></div>
+    ${x.user?`<div class="user">${esc(x.user)}</div>`:""}
+    <div class="pwrow"><span class="pwv" data-pw>••••••••••</span>
+      <button class="vbtn alt sm" type="button" data-act="show">إظهار</button>
+      <button class="vbtn alt sm" type="button" data-act="copy">نسخ</button>
+      <button class="vbtn alt sm" type="button" data-act="edit">تعديل</button>
+      <button class="vbtn danger sm" type="button" data-act="del">حذف</button></div>
+    ${x.note?`<div style="color:var(--muted);font-size:.85rem">${esc(x.note)}</div>`:""}
+  </div>`}).join("");
+}
+$("v-list").addEventListener("click",async e=>{
+  const b=e.target.closest("button[data-act]"); if(!b)return;
+  const card=b.closest(".ventry"), it=vItems.find(x=>x.id===card.dataset.id); if(!it)return;
+  const span=card.querySelector("[data-pw]");
+  if(b.dataset.act==="show"){const s=b.textContent==="إظهار";span.textContent=s?it.pw:"••••••••••";b.textContent=s?"إخفاء":"إظهار"}
+  if(b.dataset.act==="copy"){span.textContent=it.pw;copy(it.pw,span);setTimeout(()=>{span.textContent="••••••••••"},4000)}
+  if(b.dataset.act==="edit"){vEdit=it.id;$("a-site").value=it.site;$("a-user").value=it.user;$("a-pw").value=it.pw;$("a-note").value=it.note||"";strHint();$("a-title").textContent="تعديل رمز";$("a-save").textContent="حفظ التعديل";$("a-cancel").hidden=false;$("a-site").focus()}
+  if(b.dataset.act==="del"){
+    if(b.dataset.armed){vItems=vItems.filter(x=>x.id!==it.id);await persist();renderList();toast("تم الحذف");return}
+    b.dataset.armed="1";b.textContent="تأكيد الحذف";setTimeout(()=>{if(b.isConnected){delete b.dataset.armed;b.textContent="حذف"}},4000);
+  }
+});
+$("to-vault").addEventListener("click",()=>{
+  document.getElementById("vault").scrollIntoView({behavior:"smooth"});
+  if(vKey){resetForm();$("a-pw").value=current;strHint();$("a-site").focus()}
+  else{window._pendingPw=current;toast(store()?"افتح الخزنة أولًا":"أنشئ خزنتك أولًا")}
+});
+const _view=view; view=function(){_view(); if(vKey&&window._pendingPw){$("a-pw").value=window._pendingPw;window._pendingPw=null;strHint()}};
+
+/* backup */
+$("v-export").addEventListener("click",async()=>{
+  const blob=new Blob([await sealed()],{type:"application/json"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="ana-ramzak-backup-"+new Date().toISOString().slice(0,10)+".json";
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  vmsg("v-msg","تم تصدير نسخة مشفّرة. تحتاج كلمة المرور الرئيسية نفسها لفتحها.","ok");
+});
+let importTarget="";
+$("v-import").addEventListener("click",()=>{importTarget="open";$("v-file").click()});
+$("c-import").addEventListener("click",()=>{importTarget="create";$("v-file").click()});
+$("v-file").addEventListener("change",async()=>{
+  const f=$("v-file").files[0]; $("v-file").value=""; if(!f)return;
+  const txt=await f.text(); let o; try{o=JSON.parse(txt)}catch(e){o=null}
+  const msgId=importTarget==="open"?"v-msg":"c-msg";
+  if(!o||o.app!=="ana-ramzak") return vmsg(msgId,"هذا الملف ليس نسخة احتياطية من أنا رمزك.","err");
+  if(importTarget==="create"){ // no vault yet: adopt backup as the vault, then ask for its password
+    storeSet(txt); vmsg("c-msg",""); view(); vmsg("u-msg","تم استيراد النسخة. اكتب كلمة المرور الرئيسية الخاصة بها.","ok"); return;
+  }
+  // merge into the open vault: the backup must use the same master password
+  try{ const r=await openBlob(txt,vPass||""); mergeIn(r.items) }
+  catch(e){ vmsg("v-msg","هذه النسخة محمية بكلمة مرور رئيسية مختلفة، فما قدرنا نفتحها.","err") }
+});
+async function mergeIn(items){
+  const have=new Set(vItems.map(x=>x.id)); let n=0;
+  for(const it of items) if(!have.has(it.id)){vItems.push(it);n++}
+  await persist(); renderList(); vmsg("v-msg","تمت إضافة "+n+" رمز من النسخة الاحتياطية.","ok");
+}
+
+view();
 run(); check();
 })();
 </script>
-
-</body></html>
+</body>
+</html>
