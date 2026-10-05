@@ -1,4 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="أنا رمزك: مولّد رموز قوية وفاحص لقوة كلمات المرور.">
+<link rel="icon" href="logo.png">
 <title>أنا رمزك</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +33,9 @@
   --weak:#EF7A62; --fair:#E7B44A; --good:#6CC08D; --great:#8FD9AE; color-scheme:dark}
 
 *{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.7;direction:rtl}
 .wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
 h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.25;margin:0}
@@ -169,10 +178,11 @@ footer p{opacity:.85;font-size:.92rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-
+</head>
+<body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#gen"><img src="assets/logo.png" alt="شعار أنا رمزك"><b>أنا رمزك</b></a>
+    <a class="brand" href="#gen"><img src="logo.png" alt="شعار أنا رمزك"><b>أنا رمزك</b></a>
     <nav class="links" aria-label="أقسام الموقع">
       <a href="#gen">المولّد</a><a href="#check">افحص رمزك</a><a href="#tips">نصائح</a><a href="#team">الفريق</a><a href="#partners">الشركاء</a>
     </nav>
@@ -187,7 +197,7 @@ footer p{opacity:.85;font-size:.92rem}
       <p class="lead">ولّد رموزًا عشوائية قوية، وتحكّم في طولها ومستوى حمايتها، واعرف فورًا هل رمزك ضعيف أم آمن، وكم يحتاج المخترق ليكسره.</p>
       <span class="privacy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>كل شيء يحدث داخل جهازك، ولا يُرسل أي رمز إلى أي مكان</span>
     </div>
-    <img class="logo-big" src="assets/logo.png" alt="">
+    <img class="logo-big" src="logo.png" alt="">
   </div>
 </section>
 
@@ -306,7 +316,7 @@ footer p{opacity:.85;font-size:.92rem}
       <h2>من صنع «أنا رمزك»</h2>
     </div>
     <div class="team">
-      <figure class="photo"><img src="assets/team.jpg" alt="فريق أنا رمزك في برنامج مبدعون للأمن السيبراني" loading="lazy"></figure>
+      <figure class="photo"><img src="team.jpg" alt="فريق أنا رمزك في برنامج مبدعون للأمن السيبراني" loading="lazy"></figure>
       <div class="members">
         <div class="member"><div class="ini">ع</div><div><b>عبير تركي أبو الفرج</b><span>مديرة المشروع</span></div></div>
         <div class="member"><div class="ini">ت</div><div><b>ترف رضيان المطيري</b><span>مديرة التسويق</span></div></div>
@@ -323,13 +333,13 @@ footer p{opacity:.85;font-size:.92rem}
       <h2>شكرًا لمن آمن بفكرتنا</h2>
       <p>بنك الجزيرة، وبرنامج مبدعون، وتك شوب.</p>
     </div>
-    <div class="partners"><img src="assets/partners.png" alt="شعارات شركاء النجاح: مبدعون، تك شوب، بنك الجزيرة"></div>
+    <div class="partners"><img src="partners.png" alt="شعارات شركاء النجاح: مبدعون، تك شوب، بنك الجزيرة"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo.png" alt="أنا رمزك">
+    <img src="logo.png" alt="أنا رمزك">
     <p>أنا رمزك · مشروع ضمن برنامج مبدعون للأمن السيبراني</p>
   </div>
 </footer>
@@ -485,5 +495,5 @@ $("use-better").addEventListener("click",()=>copy(better,$("better")));
 run(); check();
 })();
 </script>
-
-</body></html>
+</body>
+</html>
